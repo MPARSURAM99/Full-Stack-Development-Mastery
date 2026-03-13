@@ -71,7 +71,6 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-size: var(--fs-xl);
-  padding-bottom: 100px;
 }
 
 .container {
@@ -598,7 +597,30 @@ body {
   color: var(--accent-primary);
 }
 
-.p-porject-description {
+.div-project-organisation-name i {
+  color: var(--accent-secondary);
+}
+
+.div-project-organisation-name strong {
+  margin-left: var(--space-sm);
+  color: var(--text-muted);
+  font-size: large;
+}
+
+.div-porject-description {
+  width: 100%;
+  height: 150px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.div-porject-description::-webkit-scrollbar {
+  display: none;
+}
+
+.div-porject-description p {
   width: 100%;
   white-space: pre-line;
   line-height: 1.2;
@@ -683,6 +705,89 @@ body {
   justify-content: center;
 }
 
+/* Contact Section */
+.div-contact {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.div-left a {
+  padding: var(--space-lg);
+  background-color: var(--accent-primary);
+  color: #fff;
+  border-radius: var(--space-md);
+  box-shadow: var(--shadow-texture);
+}
+
+.div-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-right form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.form-component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--space-sm);
+}
+
+.form-component label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm);
+}
+
+.form-component textarea {
+  resize: vertical;
+  max-width: 100%;
+  border: 1px solid var(--accent-primary);
+}
+
+.form-component input {
+  height: 50px;
+  outline: none;
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--space-sm);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-accent);
+  padding: var(--space-md) 0;
+}
+
+.footer p {
+  color: var(--text-muted);
+  text-align: center;
+}
+
 /* Extra large devices (large desktops: 993px–1200px) */
 @media (max-width: 1200px) {
   body {
@@ -752,6 +857,16 @@ body {
 
   .div-timeline-content {
     text-align: left;
+  }
+
+  .div-contact {
+    flex-direction: column-reverse;
+    gap: var(--space-lg);
+  }
+
+  .div-left,
+  .div-right {
+    width: 100%;
   }
 }
 
