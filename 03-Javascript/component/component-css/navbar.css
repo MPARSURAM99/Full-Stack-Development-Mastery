@@ -1,0 +1,65 @@
+.nav-navbar {
+  width: 100%;
+  padding: 20px 50px;
+  border-bottom: 1px solid var(--background-400);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.div-nav-brand {
+  height: 40px;
+  width: 40px;
+  background-image: url("/assets/logo.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  border: 1px solid var(--background-900);
+  box-shadow: var(--shadow-texture);
+  cursor: pointer;
+}
+
+.div-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.div-nav-links a {
+  text-decoration: none;
+  color: var(--text-950);
+  font-weight: bolder;
+}
+
+.div-nav-links a:nth-child(1) {
+  padding: 10px;
+  background-color: var(--primary-300);
+  border-radius: 10px;
+  box-shadow: var(--shadow-texture);
+}
+
+.div-nav-icon i {
+  font-size: xx-large;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+/* Extra large devices (large desktops: 993px–1200px) */
+@media (max-width: 1200px) {
+}
+
+/* Large devices (desktops: 769px–992px) */
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets: 577px–768px) */
+@media (max-width: 768px) {
+}
+
+/* Small devices (phones: ≤576px) */
+@media (max-width: 576px) {
+  .div-nav-links a:not(:first-child) {
+    display: none;
+  }
+}

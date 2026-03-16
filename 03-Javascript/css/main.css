@@ -1,0 +1,42 @@
+@import url("/component/component-css/navbar.css");
+@import url("./config.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-100);
+  color: var(--text-950);
+  font-size: var(--fs-xl);
+}
+
+/* Extra large devices (large desktops: 993px–1200px) */
+@media (max-width: 1200px) {
+  body {
+    font-size: var(--fs-xl);
+  }
+}
+
+/* Large devices (desktops: 769px–992px) */
+@media (max-width: 992px) {
+  body {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* Medium devices (tablets: 577px–768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: var(--fs-md);
+  }
+}
+
+/* Small devices (phones: ≤576px) */
+@media (max-width: 576px) {
+  body {
+    font-size: var(--fs-sm);
+  }
+}
