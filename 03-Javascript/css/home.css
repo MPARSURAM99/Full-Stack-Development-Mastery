@@ -1,1 +1,31 @@
 @import url("./config.css");
+
+.div-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.div-hero h1 {
+  text-align: center;
+  font-size: var(--fs-hero);
+  font-weight: bolder;
+}
+
+.div-hero h2 {
+  text-align: center;
+  color: var(--text-500);
+}
+
+.button-start {
+  font-size: var(--fs-lg);
+  font-weight: bolder;
+  border: none;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--primary-500);
+  box-shadow: var(--shadow-texture);
+  cursor: pointer;
+}

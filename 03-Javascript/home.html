@@ -6,13 +6,26 @@
     <title>My Resume</title>
 
     <link rel="stylesheet" href="./css/main.css" />
-    <script type="module" src="./javascript/main.js"></script>
     <script
       src="https://kit.fontawesome.com/3b9dde7e3f.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <component-navbar links="Create,Home,Projects"></component-navbar>
+    <component-navbar
+      data-links='[{"label" : "Create", "url" : "/registration.html"},{"label" : "Contact Us", "url" : "#contactus"}]'
+    ></component-navbar>
+    <section class="container">
+      <div class="div-hero">
+        <h1>One Stop Solution</h1>
+        <h2>For Building Your ATS Friendly Resume</h2>
+        <button id="button-get-started" class="button-start">
+          Get Started For Free
+        </button>
+      </div>
+    </section>
+
+    <script src="./javascript/home.js"></script>
+    <script type="module" src="./javascript/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,214 @@
+.div-form-container {
+  margin-top: 100px;
+  min-width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--space-md);
+}
+
+.div-progressbar-container {
+  width: 100%;
+  min-height: 12vh;
+  padding: var(--space-lg) var(--space-md);
+  border-top-left-radius: var(--space-md);
+  border-top-right-radius: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-outer-bar {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: var(--background-50);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.div-inner-bar {
+  position: absolute;
+  left: 0;
+  width: 16.6%;
+  height: 100%;
+  background-color: var(--primary-800);
+}
+
+.div-step-circle {
+  height: clamp(1rem, 2vw, 1.5rem);
+  width: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  border-radius: 50%;
+  background-color: var(--background-50);
+  border: 1px solid var(--primary-800);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-texture);
+}
+
+.form-body {
+  width: 100%;
+  padding: var(--space-md) 0;
+  display: flex;
+  align-items: center;
+}
+
+.fieldset-inactive {
+  min-width: 100%;
+  border: 1px solid var(--background-400);
+  padding: var(--space-lg);
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.fieldset-active {
+  display: grid;
+}
+
+.form-body fieldset legend {
+  font-weight: bolder;
+  background-color: var(--background-300);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.div-photo-section {
+  width: 100%;
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-dragable {
+  width: clamp(10rem, 40vw, 20rem);
+  height: auto;
+  padding: var(--space-sm) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+#input-dragable-area {
+  display: none;
+}
+
+.div-image-preview {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  border: 1px dashed var(--background-400);
+  border-radius: var(--space-lg);
+  background-size: cover;
+  background-position: center;
+}
+
+.div-image-preview small {
+  text-align: center;
+}
+
+.div-image-preview img {
+  width: 50%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.div-grid-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.div-grid-item label {
+  width: 100%;
+  padding: var(--space-sm) 0;
+  cursor: pointer;
+}
+
+.div-grid-item label::after {
+  position: relative;
+  content: "❊";
+  height: 100%;
+  margin-left: var(--space-sm);
+  color: red;
+}
+
+.div-grid-item input {
+  width: 100%;
+  outline: none;
+  border-radius: var(--space-sm);
+  background-color: var(--background-50);
+  padding: var(--space-md);
+  color: var(--text-950);
+}
+
+.div-grid-item input[type="text"] {
+  font-size: clamp(var(--fs-md), 2vw, var(--fs-lg));
+  border: 1px solid var(--background-400);
+}
+
+.div-grid-item small {
+  display: inline-block;
+  min-height: 30px;
+  padding: var(--space-sm) 0;
+}
+
+/* Javascript Element */
+.div-fieldset-action {
+  width: 100%;
+  grid-column: 1/-1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.div-fieldset-action button {
+  font-size: clamp(1rem, 2vw, var(--fs-lg));
+  border: none;
+  font-weight: bolder;
+  width: clamp(120px, 20vw, 150px);
+  padding: clamp(0.5rem, 2vw, var(--space-md));
+  border-radius: var(--space-md);
+  background-color: var(--primary-500);
+  box-shadow: var(--shadow-texture);
+  cursor: pointer;
+}
+
+/* Extra large devices (large desktops: 993px–1200px) */
+@media (max-width: 1200px) {
+}
+
+/* Large devices (desktops: 769px–992px) */
+@media (max-width: 992px) {
+  .form-body fieldset {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets: 577px–768px) */
+@media (max-width: 768px) {
+  .form-body fieldset {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Small devices (phones: ≤576px) */
+@media (max-width: 576px) {
+}

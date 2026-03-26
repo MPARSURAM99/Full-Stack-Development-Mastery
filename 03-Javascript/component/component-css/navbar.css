@@ -1,10 +1,13 @@
 .nav-navbar {
   width: 100%;
   padding: 20px 50px;
+  background-color: var(--background-100);
   border-bottom: 1px solid var(--background-400);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 10;
 }
 
 .div-nav-brand {
@@ -33,9 +36,10 @@
 }
 
 .div-nav-links a:nth-child(1) {
-  padding: 10px;
+  color: var(--text-950);
+  padding: var(--space-sm);
   background-color: var(--primary-300);
-  border-radius: 10px;
+  border-radius: var(--space-sm);
   box-shadow: var(--shadow-texture);
 }
 

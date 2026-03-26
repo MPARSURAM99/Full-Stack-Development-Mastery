@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/3b9dde7e3f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <component-navbar></component-navbar>
+
+    <section class="container">
+      <div class="div-form-container">
+        <div class="div-progressbar-container">
+          <div class="div-outer-bar">
+            <div class="div-inner-bar"></div>
+            <div class="div-step-circle">1</div>
+            <div class="div-step-circle">2</div>
+            <div class="div-step-circle">3</div>
+            <div class="div-step-circle">4</div>
+            <div class="div-step-circle">5</div>
+            <div class="div-step-circle">6</div>
+            <div class="div-step-circle">7</div>
+          </div>
+        </div>
+        <form action="#" class="form-body">
+          <fieldset class="fieldset-inactive">
+            <legend>Personal information</legend>
+            <div class="div-photo-section">
+              <label for="input-dragable-area" class="label-dragable">
+                <input type="file" accept="image/*" id="input-dragable-area" />
+                <div id="div-image-preview" class="div-image-preview">
+                  <img src="./assets/upload-icon.png" alt="" />
+                  <small>
+                    Drag and drop <br />
+                    or <br />
+                    Click here to upload
+                  </small>
+                </div>
+              </label>
+            </div>
+            <div class="div-grid-item">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" />
+              <small></small>
+            </div>
+            <div class="div-grid-item">
+              <label for="middleName">Middle Name</label>
+              <input type="text" id="middleName" />
+              <small></small>
+            </div>
+            <div class="div-grid-item">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" />
+              <small></small>
+            </div>
+          </fieldset>
+          <fieldset class="fieldset-inactive">
+            <legend>Education</legend>
+          </fieldset>
+          <fieldset class="fieldset-inactive">
+            <legend>Exprience</legend>
+          </fieldset>
+          <fieldset class="fieldset-inactive">
+            <legend>Address</legend>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <script type="module" src="/javascript/main.js"></script>
+    <script src="./javascript/registration.js"></script>
+  </body>
+</html>
