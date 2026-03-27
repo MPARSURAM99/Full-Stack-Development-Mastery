@@ -39,21 +39,6 @@
   background-color: var(--primary-800);
 }
 
-.div-step-circle {
-  height: clamp(1rem, 2vw, 1.5rem);
-  width: clamp(1rem, 2vw, 1.5rem);
-  padding: clamp(0.5rem, 2vw, 1rem);
-  border-radius: 50%;
-  background-color: var(--background-50);
-  border: 1px solid var(--primary-800);
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow-texture);
-}
-
 .form-body {
   width: 100%;
   padding: var(--space-md) 0;
@@ -68,10 +53,6 @@
   display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
-}
-
-.fieldset-active {
-  display: grid;
 }
 
 .form-body fieldset legend {
@@ -141,11 +122,10 @@
 }
 
 .div-grid-item label::after {
-  position: relative;
   content: "❊";
-  height: 100%;
   margin-left: var(--space-sm);
   color: red;
+  font-size: small;
 }
 
 .div-grid-item input {
@@ -168,7 +148,36 @@
   padding: var(--space-sm) 0;
 }
 
-/* Javascript Element */
+/* CSS for dynamic element created by JS */
+.div-step-circle {
+  position: relative;
+  height: clamp(1rem, 2vw, 1.5rem);
+  width: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  border-radius: 50%;
+  background-color: var(--background-50);
+  border: 1px solid var(--primary-800);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-texture);
+}
+
+.div-step-circle.step-circle-active::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  border: 3px solid var(--background-800);
+}
+
+.fieldset-active {
+  display: grid;
+}
+
 .div-fieldset-action {
   width: 100%;
   grid-column: 1/-1;

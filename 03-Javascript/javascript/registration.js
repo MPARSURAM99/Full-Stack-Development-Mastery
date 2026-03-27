@@ -1,3 +1,4 @@
+// Local storage setup for form fieldset.
 let currentIndex = localStorage.getItem("fieldSetIndex");
 if (!currentIndex) {
   currentIndex = 0;
@@ -6,16 +7,19 @@ if (!currentIndex) {
   currentIndex = parseInt(currentIndex, 10);
 }
 
-let user = localStorage.getItem("user");
-if (!user) {
-  user = [];
-  localStorage.setItem("user", JSON.stringify(user));
-} else {
-  user = JSON.parse(user);
+// Creating step circle dinamically.
+const parentOfStepCircle = document.querySelector(".div-outer-bar");
+const fieldSets = document.querySelectorAll("fieldset");
+function createStepCircle(i) {
+  const stepCircle = document.createElement("div");
+  stepCircle.classList.add("div-step-circle");
+  stepCircle.textContent = i + 1;
+  parentOfStepCircle.appendChild(stepCircle);
 }
 
-const fieldSets = document.querySelectorAll("fieldset");
+// Fieldset and it's controle button functionality.
 fieldSets.forEach((fs, i) => {
+  createStepCircle(i);
   i === currentIndex
     ? fs.classList.add("fieldset-active")
     : fs.classList.remove("fieldset-active");
@@ -54,23 +58,52 @@ fieldSets.forEach((fs, i) => {
 
   previousButton.addEventListener("click", () => {
     if (currentIndex > 0) {
+      progressNode.forEach((node) =>
+        node.classList.remove("step-circle-active"),
+      );
       fieldSets[currentIndex].classList.remove("fieldset-active");
       currentIndex--;
       localStorage.setItem("fieldSetIndex", currentIndex);
       fieldSets[currentIndex].classList.add("fieldset-active");
+      progressNode[currentIndex].classList.add("step-circle-active");
     }
   });
 
   nextButton.addEventListener("click", () => {
     if (currentIndex < fieldSets.length - 1) {
+      progressNode.forEach((node) =>
+        node.classList.remove("step-circle-active"),
+      );
       fieldSets[currentIndex].classList.remove("fieldset-active");
       currentIndex++;
       localStorage.setItem("fieldSetIndex", currentIndex);
       fieldSets[currentIndex].classList.add("fieldset-active");
+      progressNode[currentIndex].classList.add("step-circle-active");
     }
   });
 });
 
+// Step circle functionality.
+const progressNode = document.querySelectorAll(".div-step-circle");
+progressNode[currentIndex].classList.add("step-circle-active");
+progressNode.forEach((pn, i) => {
+  pn.addEventListener("click", () => {
+    progressNode.forEach((node) => node.classList.remove("step-circle-active"));
+    fieldSets[currentIndex].classList.remove("fieldset-active");
+    currentIndex = i;
+    fieldSets[currentIndex].classList.add("fieldset-active");
+    localStorage.setItem("fieldSetIndex", currentIndex);
+    progressNode[currentIndex].classList.add("step-circle-active");
+  });
+});
+
+let user = localStorage.getItem("user");
+if (!user) {
+  user = [];
+  localStorage.setItem("user", JSON.stringify(user));
+} else {
+  user = JSON.parse(user);
+}
 
 const inputImage = document.getElementById("input-dragable-area");
 const imagePreview = document.getElementById("div-image-preview");
