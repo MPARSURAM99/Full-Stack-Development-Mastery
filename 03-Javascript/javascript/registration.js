@@ -1,3 +1,4 @@
+import { getAllCountries } from "./main.js";
 // Local storage setup for form fieldset.
 let currentIndex = localStorage.getItem("fieldSetIndex");
 if (!currentIndex) {
@@ -96,6 +97,18 @@ progressNode.forEach((pn, i) => {
     progressNode[currentIndex].classList.add("step-circle-active");
   });
 });
+
+const citizenShipSelector = document.getElementById("select-citizenship");
+async function populateCountries() {
+  const countries = await getAllCountries();
+  countries.forEach((country) => {
+    const citizenshipOption = document.createElement("option");
+    citizenshipOption.value = country.iso2;
+    citizenshipOption.textContent = country.name;
+    citizenShipSelector.appendChild(citizenshipOption);
+  });
+}
+populateCountries();
 
 let user = localStorage.getItem("user");
 if (!user) {

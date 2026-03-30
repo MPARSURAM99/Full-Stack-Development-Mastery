@@ -24,7 +24,7 @@
         <form action="#" class="form-body">
           <fieldset class="fieldset-inactive">
             <legend>Personal information</legend>
-            <div class="div-photo-section">
+            <div class="div-profile-photo">
               <label for="input-dragable-area" class="label-dragable">
                 <input type="file" accept="image/*" id="input-dragable-area" />
                 <div id="div-image-preview" class="div-image-preview">
@@ -40,17 +40,60 @@
             <div class="div-grid-item">
               <label for="firstName">First Name</label>
               <input type="text" id="firstName" />
-              <small></small>
             </div>
             <div class="div-grid-item">
               <label for="middleName">Middle Name</label>
               <input type="text" id="middleName" />
-              <small></small>
             </div>
             <div class="div-grid-item">
               <label for="lastName">Last Name</label>
               <input type="text" id="lastName" />
-              <small></small>
+            </div>
+            <div class="div-grid-item">
+              <label for="fathersName">Father's Name</label>
+              <input type="text" id="fathersName" />
+            </div>
+            <div class="div-grid-item">
+              <label for="fathersName">Mother's Name</label>
+              <input type="text" id="fathersName" />
+            </div>
+            <div class="div-grid-item">
+              <label>Gender</label>
+              <div class="div-gender">
+                <label for="male"
+                  >Male
+                  <input type="radio" name="gender" id="male" value="male"
+                /></label>
+                <label for="female"
+                  >Female
+                  <input type="radio" name="gender" id="female" value="female"
+                /></label>
+                <label for="other"
+                  >Other
+                  <input type="radio" name="gender" id="other" value="other"
+                /></label>
+              </div>
+            </div>
+            <div class="div-grid-item">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" />
+            </div>
+            <div class="div-grid-item">
+              <label for="select-citizenship">Citizenship</label>
+              <select name="citizenship" id="select-citizenship">
+                <option value="selectOne">Select One</option>
+              </select>
+            </div>
+            <div class="div-grid-item">
+              <label for="occupation">Occupation</label>
+              <input type="text" id="occupation" />
+            </div>
+            <div class="div-grid-item textarea-professional-summery">
+              <label for="professionalSummery">Professional Summery</label>
+              <textarea
+                name="professionalSummery"
+                id="professionalSummery"
+              ></textarea>
             </div>
           </fieldset>
           <fieldset class="fieldset-inactive">
@@ -67,6 +110,6 @@
     </section>
 
     <script type="module" src="/javascript/main.js"></script>
-    <script src="./javascript/registration.js"></script>
+    <script type="module" src="./javascript/registration.js"></script>
   </body>
 </html>

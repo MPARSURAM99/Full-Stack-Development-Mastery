@@ -61,7 +61,7 @@
   padding: var(--space-sm) var(--space-lg);
 }
 
-.div-photo-section {
+.div-profile-photo {
   width: 100%;
   grid-column: 1/-1;
   display: flex;
@@ -121,23 +121,28 @@
   cursor: pointer;
 }
 
-.div-grid-item label::after {
+/* .div-grid-item label::after {
   content: "❊";
   margin-left: var(--space-sm);
   color: red;
   font-size: small;
-}
+} */
 
-.div-grid-item input {
+input,
+select,
+textarea {
   width: 100%;
   outline: none;
   border-radius: var(--space-sm);
   background-color: var(--background-50);
-  padding: var(--space-md);
+  padding: 14px;
   color: var(--text-950);
 }
 
-.div-grid-item input[type="text"] {
+input[type="text"],
+input[type="date"],
+select,
+textarea {
   font-size: clamp(var(--fs-md), 2vw, var(--fs-lg));
   border: 1px solid var(--background-400);
 }
@@ -146,6 +151,57 @@
   display: inline-block;
   min-height: 30px;
   padding: var(--space-sm) 0;
+}
+
+.div-gender {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: var(--space-lg);
+}
+
+.div-gender label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--background-950);
+  background: var(--background-50);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--background-300);
+  background-image: radial-gradient(
+    circle,
+    var(--background-300) 45%,
+    transparent 46%
+  );
+}
+
+input[type="radio"]:focus-visible {
+  outline: 3px solid
+    color-mix(in oklab, var(--background-300), var(--background-50) 35%);
+  outline-offset: 3px;
+}
+
+.textarea-professional-summery {
+  grid-column: 1/-1;
+}
+
+.textarea-professional-summery textarea {
+  resize: vertical;
 }
 
 /* CSS for dynamic element created by JS */
@@ -220,4 +276,13 @@
 
 /* Small devices (phones: ≤576px) */
 @media (max-width: 576px) {
+  .div-gender {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .div-gender input[type="radio"] {
+    position: absolute;
+    right: 0;
+  }
 }
